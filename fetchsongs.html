@@ -20,11 +20,11 @@
           <li class="nav-item active">
             <button id="top-albums" onclick="goAlbums()">Top Albums</button>
           </li>
-          <li class="new-item active">
-            <textarea id="userInput" placeholder="Search for a song"></textarea>
-          </li>
           <li class="nav-item active">
-            <button id="search" onclick="goSearch()">Search</button>
+            <form action="/wphmusic/" id="searchForm">
+               <input type="text" name="s" placeholder="Search for a song" />
+               <input type="submit" value="Search" onclick="goSearch()"/>
+            </form>
           </li>
           <li class="nav-item active">
             <button id="clear" onclick="clearPage()">Reset Page</button>
