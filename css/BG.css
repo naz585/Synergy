@@ -1,0 +1,40 @@
+/* ---- reset ---- */
+body {
+    margin: 0;
+    font: normal 75% Arial, Helvetica, sans-serif;
+  }
+  canvas {
+    display: block;
+    height: 80vh;
+  width: 100vw;
+  background-attachment:fixed;
+  } /* ---- particles.js container ---- */
+  #particles-js {
+  
+    width: 100%;
+    height: 100%;
+    background-color: #201d31;
+    background-repeat: no-repeat;
+    
+    background-position: 50% 50%;
+
+  } /* ---- stats.js ---- */
+
+  h1{
+    text-align: center;
+    color: white;
+  }
+header{
+    height: 200px;
+}
+.navbar{
+    background-color: #201d31;
+}
+
+.nav-item{
+   color: white;
+}
+
+.movies{
+    height: 600px;
+}
