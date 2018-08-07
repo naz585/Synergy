@@ -7,40 +7,35 @@
     <title>Books</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/books.css">
-    
 </head>
 <body>
-    <nav>
-        <input type="text" placeholder="Search...">
-    </nav>
-    <section class="selected-book">
-        <h1></h1>
-        <figure>
-                <img src="" alt="" style="width:100%">
+    <div class="wrapper">
+        <header class="header">
+            <h1>Synergy | Books</h1>
+            <!-- <label>Search books</label> -->
+            <input type="text" class="cc-mask" id="title-input" placeholder="Title"/>
+            <input type="text" class="cc-mask" id="author-input" placeholder="Author"/>
+            <input type="submit" value="Submit" id="addBook">
+        </header>
+        <aside class="sidebar">
+            <h2>Title</h2>
+            <figure>
+                <img src="" alt="">
                 <figcaption></figcaption>
-        </figure>
-        <article></article>
-        <article></article>
-        <article></article>
-    </section>
-    <section class="recommended-books">
-        <article><h1></h1>
-        <figure>
-            <img src="" alt="">
-            <figcaption></figcaption>
-        </figure></article>
-        <article><h1></h1>
-        <figure>
-            <img src="" alt="">
-            <figcaption></figcaption>
-        </figure></article>
-        <article><h1></h1>
-        <figure>
-            <img src="" alt="">
-            <figcaption></figcaption>
-        </figure></article>
-    </section>
-    
-<script src="./js/books.js"></script>    
+            </figure>
+        </aside>
+        <section class="content">Reviews
+                <article></article>
+                <article></article>
+                <article></article>
+        </section>
+        <!-- <footer class="footer">My footer</footer> -->
+     </div>
+
+
+  <!-- Optional JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./js/books.js"></script>
+
 </body>
 </html>
