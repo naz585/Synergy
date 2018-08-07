@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email/Password Authentication Example</title>
+  <title>Forgot Password</title>
   <!-- firebase links -->
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-auth.js"></script>
@@ -13,35 +13,26 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
   <script defer="" src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
-  <link rel="stylesheet" href="user.css">
+  <link rel="stylesheet" href="#">
 </head>
-  <body>
+<body>
   <div class="container">
     <div class="nav-header">
-      <p id="message">use the form to sign in or create an account</p>
+      <p id="message">Lol, you forgot your password...?</p>
       <div class="sign-menu">
-        <input id="txtEmail" type="email" placeholder="Email">
-        <input id="txtPassword" type="password" placeholder="Password">
+        <input id="lookEmail" type="email" placeholder="Email">
 
-        <button id="btnLogin" class="btn btn-action">
-          Log in
-        </button>
-
-        <button id="btnSignUp" class="btn btn-action">
-          Sign Up
-        </button>
-
-        <button id="btnLogout" class="btn btn-action" hidden="">
-          Log Out
+        <button id="btnForgot" class="btn btn-action">
+          Send Reset Email
         </button>
       </div>
       <br>
-      <a href="resetPass.html">Forgot Password</a>
+      <a href="#">Back to home Screen</a>
      </div>
 
   <div class="content">
   </div>
-  <script src="user.js"></script>
+  <script src="reset.js"></script>
   </body>
   </div>
     <footer class="footer">
@@ -49,4 +40,4 @@
         PlaceHolder
     </p>
   </footer>
-</html>
+</html
