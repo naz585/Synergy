@@ -2,27 +2,33 @@
 <html lang="en">
 
 <head>
-  <title>Synergy</title>
+  <title>Title</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/BG.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Russo+One" rel="stylesheet">
 </head>
 
 <body>
-
-
-
-
-
   <header>
+
+
     <div id="particles-js">
-      <h1>Synergy</h1>
+      <div class="container-fluid" id="synergy">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
 
+            <h1 class="display-4 text-center" id="title">SYNERGY</h1>
+            <p class="subtitle">Where Movies, Books and Music
+              <br> connect in one click</p>
+          </div>
 
+        </div>
+      </div>
     </div>
 
   </header>
@@ -32,7 +38,6 @@
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -46,11 +51,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Movies</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="./books.html">Books</a>
+          <a class="nav-link" href="#">Books</a>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
@@ -63,7 +66,6 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
-
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
@@ -72,32 +74,212 @@
     </div>
   </nav>
 
-  <div class="container movies mt-3">
-
-  </div>
-  <div class="container Books mt-3">
-
-  </div>
-  <section class="media book showcase" data-isbn="0062834827">
-      <header>
-        <h3 class="title"></h3>
-        <h4 class="author"></h4>
-      </header>
+  <!--<div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+            <h1> Get movies Here</h1>
+            </div>
+            <div class="col-md-3"></div>
+            
+        </div>
+    </div>
+  <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+           <form >
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit" id="on-start">Start</button>
+                </div>
+                <input type="text" class="form-control" placeholder="Enter your name" aria-label="" aria-describedby="basic-addon1" id="get-movie">
+            </div>
+                
+            </div>
+            </div>
+            </form>
+        <div class="col-md-3"></div>
+        </div>
+    </div>
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12" id="movie-info-here">
     
-      <img alt="" class="thumbnail" />  
-        
-    </section>
+                </div>
+            </div>
+        </div>
+    
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12" id="movie-goes-here">
+    
+                </div>
+            </div>
+        </div>
+      -->
+
+  <div class="container movies">
+    <div class="row">
+      <div class="col-md-12 text-center my-5">
+        <h1> In theaters now</h1>
+      </div>
+    </div>
+    <div class="row r1">
+
+    </div>
+  </div>
+
+  <div class="container space"></div>
+  <div class="container Books mt-3">
+      <div class="row">
+          <div class="col-md-12 text-center my-5">
+            <h1> NY Times Best Sellers</h1>
+      <div class="row"> 
+
+
+      </div>
+  </div>
 
   <!-- Optional JavaScript -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/particle.js"></script>
-  <script src="./js/app.js"></script>
+  <script>
+    var nowPlaying = [];
+    //movies
+    var movieURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=1d4fcbf93a1ed30c52940c611efeca36&language=en-US&page=1";
+    $.ajax({
+      url: movieURL,
+      method: "GET"
+    }).then(function (response) {
+      for (var i = 0; i < 12; i++) {
+        console.log(response.results[i]);
+        var movies = response.results;
+        var moviePoster = $("<img>");
+        moviePoster.attr("id", movies[i].title);
+        moviePoster.attr("class", "image-movie");
+        moviePoster.attr("src", "https://image.tmdb.org/t/p/w185" + movies[i].poster_path);
+        $(".r1").append("<div class = 'moviePost col-md-3'>" +
+          "<img src = https://image.tmdb.org/t/p/w185" + movies[i].poster_path + ">" +
+          "<p>" + movies[i].title + "</p>" + "</div>");
+
+      }
+    });
+    var bookURL = "https://api.nytimes.com/svc/books/v3/lists.json";
+    bookURL += '?' + $.param({
+      'api-key': "1cfb28e059e64328949be6d11c53e1a0",
+      'list': "Combined Print and E-Book Fiction"
+    });
+    $.ajax({
+      url: bookURL,
+      method: "GET"
+    }).then(function (response) {
+      for (var i = 0; i < 12; i++){
+        book = response.results[i]
+        var isbn = book.isbns[1].isbn10;
+       var bookInfo = book.book_details[0];
+        var lastWeekRank = book.rank_last_week;
+        var weeksOnList = book.weeks_on_list;
+        console.log(isbn)
+        console.log(bookInfo)
+        var listing = 
+  '<div id="' + book.rank + '" class="entry">' + 
+    '<p>' + 
+      '<img src="" class="book-cover" id="cover-' + book.rank + '">' + 
+    '</p>' + 
+    '<h2><a href="' + book.amazon_product_url + '" target="_blank">' + bookInfo.title + '</a></h2>' +
+    '<h4>By ' + bookInfo.author + '</h4>' +
+    '<h4 class="publisher">' + bookInfo.publisher + '</h4>' +
+    '<p>' + bookInfo.description + '</p>' + 
+    '<div class="stats">' +
+      '<hr>' + 
+      '<p>Last Week: ' + lastWeekRank + '</p>' + 
+      '<p>Weeks on list: ' + weeksOnList + '</p>' +
+    '</div>' +
+  '</div>';
+
+  $('.Books').append(listing);
+  $('#' + book.rank).attr('nyt-rank', book.rank);
+      updateCover(book.rank, isbn);
+      }
+     
+    });
+
+function updateCover(id, isbn) {
+  var googleBooks = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + "&key=AIzaSyBEFShOaN1sxKXRGFx5IZT5dPznpOEt_00";
+  $.ajax({
+      url: googleBooks,
+      method: "GET"
+    }).then(function (response){
+      console.log(response)
+    var img = response.items[0].volumeInfo.imageLinks.thumbnail;
+    $('#cover-' + id).attr('src', img);
+  })  
+
+}
+
+
+
+
+    /*  for (var i = 0; i < 15; i++) {
+        console.log(response.results[i]);
+        var movies = response.results;
+        for (var i = 0; i < 15; i+=1){
+            var movieDiv = $("<div class='item'>")
+            movieDiv.attr("id", i)
+            var movieData = movies[i].title;
+            console.log(movies);
+            
+            nowPlaying.push(moviesTitles);
+            console.log(nowPlaying);
+            var moviesTitles = movies[i].title;
+            console.log(moviesTitles)
+            
+            var moviePoster = $("<img>");
+            moviePoster.attr("id", movieData);
+            moviePoster.attr("class", "image-movie");
+            moviePoster.attr("src", "https://image.tmdb.org/t/p/w500" + movies[i].poster_path);
+            
+            
+            var t = $("<p>").prepend(moviesTitles);
+            var movieOverview = movies[i].overview;
+            var mO = $("<p>").text("Overview:" + movieOverview)
+            console.log(movieOverview);
+            movieDiv.prepend(t);
+            movieDiv.prepend(moviePoster);
+           
+         
+            $("#movie-goes-here").append(movieDiv); 
+            //function for overview goes here!!!!!!!!/////------------
+         
+    
+        }
+      }
+      console.log(response.results[1].poster_path);
+      $(".image-movie").on("click", function(event){
+            console.log(event.target);
+            $(event.target).attr("class", "movie-item")
+            $(event.target).prepend(mO);
+            
+            
+           
+            $("#movie-info-here").append(event.target);
+            
+            
+           });
+      //src= "http://image.tmdb.org/t/p/w185"'+ response.results[1].poster_path+'
+    }); */
+
+
+  </script>
+
+
+
+
 
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
