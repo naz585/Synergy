@@ -36,6 +36,7 @@ particlesJS("particles-js", {
         attract: { enable: false, rotateX: 600, rotateY: 1200 }
       }
     },
+  
     interactivity: {
       detect_on: "canvas",
       events: {
