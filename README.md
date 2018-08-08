@@ -1,5 +1,2 @@
-# project-1
-This is Johnny...pushing...
-
-
-I am in 'add-book-pages' branch!
+Synergy
+A place for all your entertainment needs.
