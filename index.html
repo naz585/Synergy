@@ -74,51 +74,6 @@
     </div>
   </nav>
 
-  <!--<div class="container">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-            <h1> Get movies Here</h1>
-            </div>
-            <div class="col-md-3"></div>
-            
-        </div>
-    </div>
-  <div class="container">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-           <form >
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary" type="submit" id="on-start">Start</button>
-                </div>
-                <input type="text" class="form-control" placeholder="Enter your name" aria-label="" aria-describedby="basic-addon1" id="get-movie">
-            </div>
-                
-            </div>
-            </div>
-            </form>
-        <div class="col-md-3"></div>
-        </div>
-    </div>
-    <div class="container">
-            <div class="row">
-                <div class="col-md-12" id="movie-info-here">
-    
-                </div>
-            </div>
-        </div>
-    
-    <div class="container">
-            <div class="row">
-                <div class="col-md-12" id="movie-goes-here">
-    
-                </div>
-            </div>
-        </div>
-      -->
-
   <div class="container movies">
     <div class="row">
       <div class="col-md-12 text-center my-5">
@@ -178,9 +133,26 @@
       url: bookURL,
       method: "GET"
     }).then(function (response) {
-      for (var i = 0; i < 12; i++){
+      for (var i = 0; i <12 ; i++){
         book = response.results[i]
-        var isbn = book.isbns[1].isbn10;
+        console.log(book);
+        var noIsbn;
+        if (!Array.isArray(book.isbns)|| !book.isbns.length) {
+          noIsbn = true;
+          }
+          else if ((Array.isArray(book.isbns)|| book.isbns.length)) {
+            noIsbn = false;
+          };
+
+          var isbn;
+          if (noIsbn === true) {
+            isbn = 0;
+          }
+          else {
+          isbn = book.isbns[1].isbn10;
+          }
+        
+       
         var bookInfo = book.book_details[0];
         var lastWeekRank = book.rank_last_week;
         var weeksOnList = book.weeks_on_list;
@@ -217,62 +189,12 @@ function updateCover(id, isbn) {
     }).then(function (response){
       console.log(response)
     var img = response.items[0].volumeInfo.imageLinks.thumbnail;
+    img = img.replace(/^http:\/\//i, 'https://');
     $('#cover-' + id).attr('src', img);
   })  
 
 }
 
-
-
-
-    /*  for (var i = 0; i < 15; i++) {
-        console.log(response.results[i]);
-        var movies = response.results;
-        for (var i = 0; i < 15; i+=1){
-            var movieDiv = $("<div class='item'>")
-            movieDiv.attr("id", i)
-            var movieData = movies[i].title;
-            console.log(movies);
-            
-            nowPlaying.push(moviesTitles);
-            console.log(nowPlaying);
-            var moviesTitles = movies[i].title;
-            console.log(moviesTitles)
-            
-            var moviePoster = $("<img>");
-            moviePoster.attr("id", movieData);
-            moviePoster.attr("class", "image-movie");
-            moviePoster.attr("src", "https://image.tmdb.org/t/p/w500" + movies[i].poster_path);
-            
-            
-            var t = $("<p>").prepend(moviesTitles);
-            var movieOverview = movies[i].overview;
-            var mO = $("<p>").text("Overview:" + movieOverview)
-            console.log(movieOverview);
-            movieDiv.prepend(t);
-            movieDiv.prepend(moviePoster);
-           
-         
-            $("#movie-goes-here").append(movieDiv); 
-            //function for overview goes here!!!!!!!!/////------------
-         
-    
-        }
-      }
-      console.log(response.results[1].poster_path);
-      $(".image-movie").on("click", function(event){
-            console.log(event.target);
-            $(event.target).attr("class", "movie-item")
-            $(event.target).prepend(mO);
-            
-            
-           
-            $("#movie-info-here").append(event.target);
-            
-            
-           });
-      //src= "http://image.tmdb.org/t/p/w185"'+ response.results[1].poster_path+'
-    }); */
 
 
   </script>
