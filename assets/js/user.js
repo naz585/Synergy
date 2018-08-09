@@ -54,15 +54,40 @@
                                       document.getElementById('btnLogout').hidden = false;
                                       document.getElementById('btnSignUp').hidden= true;
                                       document.getElementById('btnLogin').hidden= true;
+                                      document.getElementById('goBack').hidden = false;
+                                      document.getElementById('txtEmail').hidden = true;
+                                      document.getElementById('txtPassword').hidden = true;
                                     }else{
                                       document.getElementById('message').innerText = 'Create an Account or Login.';
                                       document.getElementById('btnLogout').hidden = true;
                                       document.getElementById('btnSignUp').hidden= false;
                                       document.getElementById('btnLogin').hidden= false;
+                                      document.getElementById('goBack').hidden = true;
+                                      document.getElementById('txtEmail').hidden = false;
+                                      document.getElementById('txtPassword').hidden = false;
                                     }
                                   });
 
 
 
 })();
+
+$(function() {
+
+    $('#login-form-link').click(function(e) {
+		$("#login-form").delay(100).fadeIn(100);
+ 		$("#register-form").fadeOut(100);
+		$('#register-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+	$('#register-form-link').click(function(e) {
+		$("#register-form").delay(100).fadeIn(100);
+ 		$("#login-form").fadeOut(100);
+		$('#login-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+
+});
 
