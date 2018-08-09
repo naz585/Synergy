@@ -13,16 +13,16 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
   <script defer="" src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
-  <link rel="stylesheet" href="user.css">
+  <link rel="stylesheet" href="assets/css/user.css">
 </head>
-  <body>
+<body background="assets/imgs/bg.jpg">
+
   <div class="container">
     <div class="nav-header">
-      <p id="message">use the form to sign in or create an account</p>
       <div class="sign-menu">
         <input id="txtEmail" type="email" placeholder="Email">
         <input id="txtPassword" type="password" placeholder="Password">
-
+        <br>
         <button id="btnLogin" class="btn btn-action">
           Log in
         </button>
@@ -36,17 +36,12 @@
         </button>
       </div>
       <br>
-      <a href="resetPass.html">Forgot Password</a>
+      <a id="resetPass" href="resetPass.html">Forgot Password</a>
+      <p id="message">use the form to sign in or create an account</p>
+      <a id="goBack" href="index.html" hidden="true">Back to Home Page</a>
      </div>
 
-  <div class="content">
   </div>
-  <script src="user.js"></script>
+  <script src="assets/js/user.js"></script>
   </body>
-  </div>
-    <footer class="footer">
-      <p>
-        PlaceHolder
-    </p>
-  </footer>
 </html>
