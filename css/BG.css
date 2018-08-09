@@ -86,3 +86,23 @@ font-family: 'Russo One', sans-serif;
 .space{
   height:500px ;
 }
+
+.Books {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
+  padding: 0px;
+  height: 100%;
+}
+
+.entry {
+  max-width: 200px;
+  margin: 10px;
+}
+
+.books-row {
+  height: 100px;
+  width: 900px;
+}
