@@ -142,5 +142,7 @@ form.example::after {
   margin-top: 100px;
 
 }
-
+.content {
+  min-height: calc(100vh - 70px);
+};
 

@@ -100,7 +100,7 @@ $('#cover-' + id).attr('src', img);
 } 
 
 
-var musicURL = "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=5b739394f1d01a1b4d5a81b276fcecc0&format=json"
+var musicURL = "https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=5b739394f1d01a1b4d5a81b276fcecc0&format=json"
 $.ajax({
   url: musicURL,
   method: "GET"
