@@ -118,12 +118,30 @@
         moviePoster.attr("id", movies[i].title);
         moviePoster.attr("class", "image-movie");
         moviePoster.attr("src", "https://image.tmdb.org/t/p/w185" + movies[i].poster_path);
-        $(".r1").append("<div class = 'moviePost col-md-3'>" +
+        $(".r1").append('<div class = "col-md-3"'+'id="'+movies[i].title+'">' +
           "<img src = https://image.tmdb.org/t/p/w185" + movies[i].poster_path + ">" +
-          "<p>" + movies[i].title + "</p>" + "</div>");
-
+          '<h5><a '+'id="'+movies[i].id+'" href="' + "#" + '" target="_blank">' + movies[i].title + '</a></h5>' + "</div>");
+          trailer(movies[i].id)
       }
-    });
+
+
+  });
+      //https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=1d4fcbf93a1ed30c52940c611efeca36&language=en-US
+      
+      function trailer(movieId){
+        var trailerURL = "https:api.themoviedb.org/3/movie/"+movieId+"/videos?api_key=1d4fcbf93a1ed30c52940c611efeca36&language=en-US";
+        $.ajax({
+      url: trailerURL,
+      method: "GET"
+    }).then(function (response) {
+      var YTkey = response.results[0].key
+      $('#'+movieId ).attr('href', "https://www.youtube.com/watch?v="+YTkey);
+
+          });
+      }
+
+
+  
     var bookURL = "https://api.nytimes.com/svc/books/v3/lists.json";
     bookURL += '?' + $.param({
       'api-key': "1cfb28e059e64328949be6d11c53e1a0",
