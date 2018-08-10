@@ -22,7 +22,7 @@ $.ajax({
 });
   
   function trailer(movieId){
-    var trailerURL = "https:api.themoviedb.org/3/movie/"+movieId+"/videos?api_key=1d4fcbf93a1ed30c52940c611efeca36&language=en-US";
+    var trailerURL = "https://api.themoviedb.org/3/movie/"+movieId+"/videos?api_key=1d4fcbf93a1ed30c52940c611efeca36&language=en-US";
     $.ajax({
   url: trailerURL,
   method: "GET"
