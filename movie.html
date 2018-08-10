@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Synergy Home</title>
+  <title>Synergy Movies</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,12 +10,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Russo+One" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link href="css/mdb.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/BG.css">
+
 </head>
 
 <body>
   <header>
+
 
     <div id="particles-js">
       <div class="container-fluid" id="synergy">
@@ -23,8 +27,7 @@
           <div class="col-md-6 mx-auto">
 
             <h1 class="display-4 text-center" id="title">SYNERGY</h1>
-            <p class="subtitle">Where Movies, Books and Music
-              <br> connect in one click</p>
+            <p class="subtitle">Movies</p>
           </div>
 
         </div>
@@ -40,78 +43,70 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
+        <li class="nav-item ">
+          <a class="nav-link" href="index.html">Home
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="music.html">Music</a>
+          <a class="nav-link" href="music.html">Music
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Movies</a>
+          <a class="nav-link active" href="movies.html">Movies
+            <span class="sr-only">(current)</span>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="books.html">Books</a>
+        <li class="nav-item ">
+          <a class="nav-link" href="books.html">Books
+           
+          </a>
         </li>
       </ul>
     </div>
   </nav>
-
-  <div class="container movies mb-5">
-    <div class="row">
-      <div class="col-md-12 text-center my-5">
-        <h1> In theaters now</h1>
-      </div>
-    </div>
-    <div class="row r1">
-
-    </div>
+  <div class="container SearchBox ui-widget">
+      <div class="row">
+          <div class="col-md-6 text-center mx-auto">
+            <h1>Search for a movie</h1>
+            <h4>Enter the title</h4>
+          </div>
+          
+          </div>
+    <div class= "row">
+    <form class="example mx-auto">
+      <input id= "Title" type="text" placeholder="Search.." name="search">
+      <button type="submit" id = "Search"><i class="fa fa-search"></i></button>
+    </form>
   </div>
-  <hr>
-
-  <div class="container Books mt-5">
-    <div class="row books-row">
-      <div class="col-md-12 text-center">
-        <h1>NY Times Best Sellers</h1>
-      </div>
-    </div>
-    <div>
-
-    </div>
   </div>
 
-  <hr>
-  <div class="container Music mt-5 content mb-3">
-    <div class="row books-row">
-      <div class="col-md-12 text-center">
-        <h1>Popular Songs</h1>
-      </div>
-    </div>
-
-    <div class="row musicR">
-
-    </div>
+  <div class="container mt-5 content mb-5">
+   <div class="row movieList">
+     
+   </div>
+  
+  
   </div>
+  
+        
   <!-- Footer -->
-  <footer class="page-footer font-small blue">
+<footer class="page-footer font-small blue">
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
       <a href="https://github.com/naz585/Synergy"> Synergy</a>
     </div>
     <!-- Copyright -->
-
+  
   </footer>
   <!-- Footer -->
-
 
   <!-- Optional JavaScript -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/particle.js"></script>
-  <script src="js/Home.js"> </script>
-
+  <script src="js/movie.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
@@ -120,7 +115,5 @@
 
 
 </body>
-
-
 
 </html>

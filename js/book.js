@@ -61,7 +61,9 @@ $("button").on("click", function () {
     img = img.replace(/^http:\/\//i, 'https://');
     $(".bookList").append("<div class = 'bookcover col-md-3'>" +
           "<img src = " + img + ">" +
-          "<p>" + response.items[i].volumeInfo.title + "</p>" + "</div>");
+          '<h5><a '+'id="' + response.items[i].volumeInfo.title +'" href="' +  
+          response.items[i].volumeInfo.canonicalVolumeLink + '" target="_blank">' + 
+          response.items[i].volumeInfo.title + '</a></h5>' + "</div>");
       }
   }); 
 
@@ -69,3 +71,5 @@ $("button").on("click", function () {
 
 
 //'https://www.googleapis.com/books/v1/volumes?q='
+//items[""0""].volumeInfo.canonicalVolumeLink
+
