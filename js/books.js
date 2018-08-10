@@ -1,41 +1,71 @@
-let buttonClick = () => {
-    //launch onclick funtionality
-    $("#addBook").on("click", function() {
-        //This is my API key
-        let APIKey = "3UW4SavsDyOzAIqS5uwA";
-
-        //This is the value of the clicked
-        let title = $("#title-input").val();
-        let author = $("#author-input").val();
-
-        console.log(title);
-        console.log(author);
-
-        // When the user clicks on a button, the page should grab 10 static, non-animated gif images from the GIPHY API and place them on the page.
-        var queryURL = "https://crossorigin.me/https://www.goodreads.com/book/title.xml?author=" + author + "&key="+ APIKey +"&title=" + title;
-        // var queryURL = "https://crossorigin.me/https://www.goodreads.com/book/title.xml?author=Arthur+Conan+Doyle&key=3UW4SavsDyOzAIqS5uwA&title=Hound+of+the+Baskervilles";
-    
-        $.ajax({
-            url: queryURL,
-            method: "GET",
-        }).then(function(response){
-            console.log("hi");
-        });
+$( function() {
+    var availableTags = [
+      "Of Mice and Men",
+      "The Outsiders",
+      "Origin",
+      "Crazy Rich Asians",
+      "Don Quixote",
+      "In Search of Lost Time",
+      "Ulysses",
+      "The Great Gatsby",
+      "Moby Dick",
+      "Hamlet",
+      "War and Peace",
+      "One Hundred Years of Solitude",
+      "The Divine Comedy",
+      "The Brothers Karamazov",
+      "Madame Bovary",
+      "The Adventures of Huckleberry",
+      "Lolita",
+      "The Iliad",
+      "Crime and Punishment",
+      "Alice's Adventures",
+      "Wuthering Heights",
+      "Pride and Prejudice"
+    ];
+    $( "#Title" ).autocomplete({
+      source: availableTags
     });
-};
+  } );
 
-// A $( document ).ready() block.
-$( document ).ready(function() {
-    buttonClick();
+
+
+
+
+
+ var name;
+$("button").on("click", function () {
+  event.preventDefault();
+  $( ".bookList" ).empty();
+  name = $("#Title").val();
+
+
+ var googleBooks = "https://www.googleapis.com/books/v1/volumes?q=" + name;
+  $.ajax({
+      url: googleBooks,
+      method: "GET"
+    }).then(function (response){
+      console.log(response)
+      for (var i = 0; i < 10; i++){
+        var volume = response.items[i].volumeInfo
+    var img;
     
+      if (volume.hasOwnProperty('imageLinks') === false) {
+        img = "https://books.google.com/books/content?id=cicXAQAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      }
+      else {
+        img = response.items[i].volumeInfo.imageLinks.thumbnail;
+      }
+    
+    
+    img = img.replace(/^http:\/\//i, 'https://');
+    $(".bookList").append("<div class = 'bookcover col-md-3'>" +
+          "<img src = " + img + ">" +
+          "<p>" + response.items[i].volumeInfo.title + "</p>" + "</div>");
+      }
+  }); 
+
 });
 
 
-
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-// });
+//'https://www.googleapis.com/books/v1/volumes?q='
