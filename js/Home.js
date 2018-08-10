@@ -70,20 +70,13 @@ $.ajax({
     console.log(isbn)
     console.log(bookInfo)
     var listing = 
-'<div id="' + book.rank + '" class="entry">' + 
-'<p>' + 
-  '<img src="" class="book-cover" id="cover-' + book.rank + '">' + 
-'</p>' + 
+'<div id="' + book.rank + '" class="entry">' + '<p>' + 
+  '<img src="" class="book-cover" id="cover-' + book.rank + '">' + '</p>' + 
 '<h2><a href="' + book.amazon_product_url + '" target="_blank">' + bookInfo.title + '</a></h2>' +
-'<h4>By ' + bookInfo.author + '</h4>' +
-'<h4 class="publisher">' + bookInfo.publisher + '</h4>' +
-'<p>' + bookInfo.description + '</p>' + 
-'<div class="stats">' +
-  '<hr>' + 
+'<h4>By ' + bookInfo.author + '</h4>' +'<h4 class="publisher">' + bookInfo.publisher + '</h4>' +
+'<p>' + bookInfo.description + '</p>' + '<div class="stats">' +'<hr>' + 
   '<p>Last Week: ' + lastWeekRank + '</p>' + 
-  '<p>Weeks on list: ' + weeksOnList + '</p>' +
-'</div>' +
-'</div>';
+  '<p>Weeks on list: ' + weeksOnList + '</p>' +'</div>' +'</div>';
 
 $('.Books').append(listing);
 $('#' + book.rank).attr('nyt-rank', book.rank);
@@ -104,5 +97,34 @@ img = img.replace(/^http:\/\//i, 'https://');
 $('#cover-' + id).attr('src', img);
 })  
 
-}
+} 
+
+
+var musicURL = "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=5b739394f1d01a1b4d5a81b276fcecc0&format=json"
+$.ajax({
+  url: musicURL,
+  method: "GET"
+}).then(function (response){
+  for (var i = 0; i <20 ; i++){
+  var songs = response.tracks.track[i];
+  console.log(songs);
+  
+  var thumb =  songs.image[2]['#text'];
+  $(".musicR").append('<div class = "col-md-3"'+'id="'+songs.name+'">' +
+  "<img src =" + thumb + ">" +
+ '<h5><a ' + 'href= "' + songs.url + '" target="_blank">' + songs.name + '</a></h5>' + "</div>");
+
+  
+  }
+  
+ 
+
+});  
+
+
+
+
+
+
+
 

@@ -24,7 +24,6 @@ background-attachment:fixed;
 
 header{
   height: 300px;
-  
 }
 .navbar{
   background-color: #201d31;
@@ -43,9 +42,6 @@ font-size:15px;
 color:white
 }
 
-.movies{
- height: 600px;
-}
 
 #title{
 font-family: 'Russo One', sans-serif;
@@ -83,9 +79,7 @@ font-family: 'Russo One', sans-serif;
   margin-bottom: 4px;
 }
 
-.space{
-  height:500px ;
-}
+
 
 .Books {
   display: flex;
