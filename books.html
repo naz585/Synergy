@@ -1,41 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Books</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/books.css">
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/BG.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Russo+One" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 </head>
+
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <h1>Synergy | Books</h1>
-            <!-- <label>Search books</label> -->
-            <input type="text" class="cc-mask" id="title-input" placeholder="Title"/>
-            <input type="text" class="cc-mask" id="author-input" placeholder="Author"/>
-            <input type="submit" value="Submit" id="addBook">
-        </header>
-        <aside class="sidebar">
-            <h2>Title</h2>
-            <figure>
-                <img src="" alt="">
-                <figcaption></figcaption>
-            </figure>
-        </aside>
-        <section class="content">Reviews
-                <article></article>
-                <article></article>
-                <article></article>
-        </section>
-        <!-- <footer class="footer">My footer</footer> -->
-     </div>
+  <header>
+
+
+    <div id="particles-js">
+      <div class="container-fluid" id="synergy">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+
+            <h1 class="display-4 text-center" id="title">SYNERGY</h1>
+            <p class="subtitle">Where Movies, Books and Music
+              <br> connect in one click</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Synergy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="index.html">Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Music</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Movies</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Books
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container SearchBox ui-widget">
+      <div class="row">
+          <div class="col-md-6 text-center mx-auto">
+            <h1>Search for a Book</h1>
+            <h4>Title or Author</h4>
+          </div>
+          
+          </div>
+    <div class= "row">
+    <form class="example mx-auto">
+      <input id= "Title" type="text" placeholder="Search.." name="search">
+      <button type="submit" id = "Search"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  </div>
+
+  <div class="container mt-5">
+   <div class="row bookList">
+     
+   </div>
+  
+  
+  </div>
+  
+        
+  
 
 
   <!-- Optional JavaScript -->
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="./js/books.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/particle.js"></script>
+  <script src="js/books.js"></script>
 
+
+
+
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
