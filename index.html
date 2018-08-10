@@ -200,7 +200,7 @@
     });
 
 function updateCover(id, isbn) {
-  var googleBooks = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + "&key=AIzaSyBEFShOaN1sxKXRGFx5IZT5dPznpOEt_00";
+  var googleBooks = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn;
   $.ajax({
       url: googleBooks,
       method: "GET"
