@@ -27,7 +27,7 @@
     const auth = firebase.auth();
     // Sign In
 
-    auth.signInWithEmailAndPassword(email, pass).catch(e => console.log(e.message));
+    auth.signInWithEmailAndPassword(email, pass).catch(e => $('.modal-body').text("Invalid Entry"),$('#myModal').modal('show'));
   });
 
   btnSignUp.addEventListener('click', (e) => {
@@ -49,6 +49,8 @@
   //Realtime Listener, checks if user is logged in or logged out. and displays so in console.
   firebase.auth().onAuthStateChanged((firebaseUser) => {
                                     if(firebaseUser) {
+                                      $('.modal-body').text("Successfully logged in")
+                                      $('#myModal').modal('show')
                                       console.log(firebaseUser);
                                       document.getElementById('message').innerText = 'You are logged in';
                                       document.getElementById('btnLogout').hidden = false;
