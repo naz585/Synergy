@@ -66,8 +66,6 @@ $.ajax({
     var bookInfo = book.book_details[0];
     var lastWeekRank = book.rank_last_week;
     var weeksOnList = book.weeks_on_list;
-    console.log(isbn)
-    console.log(bookInfo)
     var listing = 
 '<div id="' + book.rank + '" class="entry">' + '<p>' + 
   '<img src="" class="book-cover" id="cover-' + book.rank + '">' + '</p>' + 
