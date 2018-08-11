@@ -6,7 +6,6 @@ $.ajax({
   method: "GET"
 }).then(function (response) {
   for (var i = 0; i < 12; i++) {
-    console.log(response.results[i]);
     var movies = response.results;
     var moviePoster = $("<img>");
     moviePoster.attr("id", movies[i].title);
@@ -46,7 +45,7 @@ $.ajax({
 }).then(function (response) {
   for (var i = 0; i <12 ; i++){
     book = response.results[i]
-    console.log(book);
+
     var noIsbn;
     if (!Array.isArray(book.isbns)|| !book.isbns.length) {
       noIsbn = true;
@@ -91,7 +90,6 @@ $.ajax({
   url: googleBooks,
   method: "GET"
 }).then(function (response){
-  console.log(response)
 var img = response.items[0].volumeInfo.imageLinks.thumbnail;
 img = img.replace(/^http:\/\//i, 'https://');
 $('#cover-' + id).attr('src', img);
@@ -107,7 +105,6 @@ $.ajax({
 }).then(function (response){
   for (var i = 0; i <20 ; i++){
   var songs = response.tracks.track[i];
-  console.log(songs);
   
   var thumb =  songs.image[2]['#text'];
   $(".musicR").append('<div class = "col-md-3"'+'id="'+songs.name+'">' +
