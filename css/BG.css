@@ -29,8 +29,16 @@ header{
   background-color: #201d31;
 }
 
+
 .navbar-toggler-icon{
 color: aliceblue;
+}
+.navbar-brand{
+    color:#28fff4;
+}
+
+.navbar-brand:hover{
+    color:white;
 }
 
 
