@@ -24,7 +24,6 @@ $("button").on("click", function () {
       url: MovieURL,
       method: "GET"
     }).then(function (response){
-        console.log(response);
         for (var i = 0; i < 20; i++){
       var movies = response.results[i];
       $(".movieList").append('<div class = "col-md-3"'+'id="'+movies.title+'">' +
@@ -46,7 +45,7 @@ function trailer(movieId){
   url: trailerURL,
   method: "GET"
 }).then(function (response) {
-console.log(response);
+
 
 var YTkey;
 
