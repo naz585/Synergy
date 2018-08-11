@@ -53,7 +53,8 @@ color:white
 
 #title{
 font-family: 'Russo One', sans-serif;
-
+color: white;
+text-align: center;
 }
 .subtitle{
   font-size: 22px;
