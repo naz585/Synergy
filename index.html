@@ -1,153 +1,48 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <title>Synergy Home</title>
-  <!-- Required meta tags -->
+<!DOCTYPE html>
+<html>
+  <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-    crossorigin="anonymous">
-
-  <!-- firebase -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email/Password Authentication Example</title>
+  <!-- firebase links -->
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-auth.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Russo+One" rel="stylesheet">
-  <link href="css/mdb.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/BG.css">
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script defer="" src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <link rel="stylesheet" href="assets/css/user.css">
 </head>
+<body background="assets/imgs/bg.jpg">
 
-<body>
-  <header>
+  <div class="container">
+    <div class="nav-header">
+      <div class="sign-menu">
+        <input id="txtEmail" type="email" placeholder="Email">
+        <input id="txtPassword" type="password" placeholder="Password">
+        <br>
+        <button id="btnLogin" class="btn btn-action">
+          Log in
+        </button>
 
-    <div id="particles-js">
-      <div class="container-fluid" id="synergy">
-        <div class="row">
-          <div class="col-md-6 mx-auto">
+        <button id="btnSignUp" class="btn btn-action">
+          Sign Up
+        </button>
 
-            <h1 class="display-4 text-center" id="title">SYNERGY</h1>
-            <p class="subtitle">Where Movies, Books and Music
-              <br> connect in one click</p>
-          </div>
-
-        </div>
+        <button id="btnLogout" class="btn btn-action" hidden="">
+          Log Out
+        </button>
       </div>
-    </div>
+      <br>
+      <a id="resetPass" href="resetPass.html">Forgot Password</a>
+      <p id="message">use the form to sign in or create an account</p>
+      <a id="goBack" href="home.html" hidden="true">Back to Home Page</a>
+     </div>
 
-  </header>
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">Synergy</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="music.html">Music</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="movie.html">Movies</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="books.html">Books</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#chatroom">Chatroom</a>
-        </li>
-        <li class="nav-item">
-          <div id="login">
-            <a class="nav-link" href="users.html">Login</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <div id="logout">
-            <a class="nav-link" href="users.html">Logout</a>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <div id="message"></div>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="container movies mb-5">
-    <div class="row">
-      <div class="col-md-12 text-center my-5">
-        <h1> In theaters now</h1>
-      </div>
-    </div>
-    <div class="row r1">
-
-    </div>
   </div>
-  <hr>
-
-  <div class="container Books mt-5">
-    <div class="row books-row">
-      <div class="col-md-12 text-center">
-        <h1>NY Times Best Sellers</h1>
-      </div>
-    </div>
-    <div>
-
-    </div>
-  </div>
-
-  <hr>
-  <div class="container Music mt-5 content mb-3">
-    <div class="row books-row">
-      <div class="col-md-12 text-center">
-        <h1>Popular Songs</h1>
-      </div>
-    </div>
-
-    <div class="row musicR">
-
-    </div>
-  </div>
-
-  <a name="chatroom">
-    <iframe id="inlineFrameExample" title="Inline Frame Example" width="100%" height="900px"
-    src="https://friendlychat-4c88b.firebaseapp.com/">
-  </iframe>
-  </a>
-
-
-  <!-- Footer -->
-  <footer class="page-footer font-small blue">
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-      <a href="https://github.com/naz585/Synergy"> Synergy</a>
-    </div>
-    <!-- Copyright -->
-
-  </footer>
-  <!-- Footer -->
-
-
-  <!-- Optional JavaScript -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="js/particle.js"></script>
-  <script src="js/Home.js"> </script>
-
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-    crossorigin="anonymous"></script>
-
-  <script src="display.js"></script>
-</body>
+  <script src="assets/js/user.js"></script>
+  </body>
 </html>
