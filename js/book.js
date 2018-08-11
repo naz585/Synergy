@@ -45,7 +45,6 @@ $("button").on("click", function () {
       url: googleBooks,
       method: "GET"
     }).then(function (response){
-      console.log(response)
       for (var i = 0; i < 10; i++){
         var volume = response.items[i].volumeInfo
     var img;
