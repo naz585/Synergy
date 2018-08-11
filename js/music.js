@@ -26,7 +26,6 @@ $("button").on("click", function () {
     }).then(function (response){
         for (var i = 0; i < 24; i++){
      var Tracks = response.results.trackmatches.track[i];
-     console.log(Tracks);
      var img = Tracks.image[2]['#text'];
       var trackURL = Tracks.url;
       var trackName = Tracks.name;
